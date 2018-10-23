@@ -3,8 +3,42 @@ import java.util.HashMap;
 //import java.util.Scanner;
 
 /**
- * @author TODO: please add student ID and name here
- * Try to write some comments for your codes (methods, 10 points)
+ * @author TODO: B0444238 詹子霆
+ *  一開始 定義了兩個ArrayList 
+ *  兩個型態皆為Card 名稱usedCard,cards
+ *  再新增變數叫做nUsed 表示發牌的次數
+ *  把Random這個藍圖做成Object 名稱叫做ran
+ * 
+ *  在Deck的Constructor裡面 實體化兩個ArrayList
+ *  一個是cards 為還沒有發出去的牌
+ *  一個是usedCard 為已經發出去的牌
+ *  
+ *  用nDeck去看需要跑幾副牌
+ *  y 為花色   z 為數字
+ *  
+ *  新增一個Card型態的變數card 
+ *  他裡面所存在的值會依照y的不同變更花色
+ *  花色是在Card.java裡面的Suit裡面拿到的
+ *  用剛剛得到的值新增到cards裡面
+ *  因為老師規定在Deck的Constructor的最後需要進行一次洗牌 所以在最後加入Shuffle()
+ *  
+ *  在shuffle的Method裡面
+ *  進入這個Method就會讓發過牌的次數直接歸零
+ *  將所有發過的牌複製給莊家(cards)
+ *  再將發過的牌清空(usedCard)
+ *  隨機從cards裡面挑選一個位置給loc儲存起來
+ *  把原本在loc的值取出儲存至val
+ *  再把剛剛loc位置的值val和正在進行迴圈的次數i位置的值進行交換'
+ *  
+ *  在getOneCard的Mehtod裡面
+ *  當cards 莊家的牌歸零的時候就進行洗牌的動作
+ *  新增一個card讓他儲存cards裡面的第一個位置的值
+ *  並移除原本在cards位置的值
+ *  在usedCard裡面新增剛剛拿到的牌
+ *  新增一次發牌的次數
+ *  回傳剛剛拿到的值
+ *  
+ *  (methods, 10 points)
  */
 public class HW3 {
 	public static void main(String[] args) {
@@ -19,7 +53,7 @@ public class HW3 {
 		//shuffle (10 points)
 		//constructor (5 points)
 		Deck deck=new Deck(nDeck);
-		
+			
 		//TODO: please check your output, make sure that you print newCard and newCard2 on your screen  (10 points)
 		//TODO: please add new fields and methods to Card class (25)
 		//Use enumerated type in Card (10 points)
